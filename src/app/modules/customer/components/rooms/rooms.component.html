@@ -1,0 +1,60 @@
+<div class="container room-container">
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let room of rooms">
+            <div class="card" style="width: 18rem; margin: 16px;">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://cache.marriott.com/marriottassets/marriott/LASJW/lasjw-suite-0084-hor-clsc.jpg?interpolation=progressive-bilinear&" class="rounded-circle me-3" alt="Room Avatar" width="50" height="50">
+                        <div>
+                            <h5 class="card-title">{{ room.name }}</h5>
+                            <p class="card-text">Type: {{ room.type }}</p>
+                            <p class="card-text">Price: {{ room.price }}</p>
+
+                        </div>
+                    </div>
+                    <div class="check-button d-flex">
+                      <div  (click)="showConfirm(room.id, confirmModalContent, $event)">
+                        <i class="bi bi-check-square check-icon"></i>                    
+                      </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pagination-container">
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [class.disabled]="getCurrentPage() === 1">
+          <a class="page-link" aria-label="Previous" (click)="pageIndexChange(getCurrentPage() - 1)">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item" [class.active]="getCurrentPage() === page" *ngFor="let page of totalPagesArray()">
+          <a class="page-link"  (click)="pageIndexChange(page)">{{ page }}</a>
+        </li>
+        <li class="page-item" [class.disabled]="getCurrentPage() === total">
+          <a class="page-link" aria-label="Next" (click)="pageIndexChange(getCurrentPage() + 1)">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+<ng-template #confirmModalContent>
+  <div [formGroup]="myGroup">
+  <div class="row">
+    <div class="col-6">
+       <label for="startDate">Check in date</label>
+      <input type="date" name="startDate" id="startDate" placeholder="check-icon" formControlName="startDate" class="form-control">
+    </div>
+    <div class="col-6">
+      <label for="endDate">Check out date</label>
+      <input type="date" name="endDate" id="endDate" placeholder="check-icon" formControlName="endDate" class="form-control">
+    </div>
+  </div>
+  </div>
+</ng-template>

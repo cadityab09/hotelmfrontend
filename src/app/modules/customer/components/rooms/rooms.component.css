@@ -1,0 +1,25 @@
+.room-conainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    color: red;
+}
+
+/* .pagination-container {
+    display: flex;
+    float: right;
+    margin-right: 170px;
+} */
+
+.check-button {
+    justify-content: center;
+}
+
+.check-icon {
+    font-size: 30px;
+}
+
+.active-color {
+    color: blue; 
+}

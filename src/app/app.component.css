@@ -1,0 +1,66 @@
+app-header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 4rem;
+  z-index: 99;
+  overflow: scroll;
+}
+
+main {
+  position: absolute;
+  width: 100%;
+  top: 4rem;
+  z-index: 1;
+}
+
+app-side-nav {
+  position: absolute;
+  width: 60px;
+  left: 0rem;
+  height: calc(100vh - 4rem);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  background-color: rgba(34, 34, 34, 1);
+  border-top: 1px solid white;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 1s ease;
+  z-index: 2;
+
+}
+
+.app-side-nav-open {
+  width: 250px;
+}
+
+.display-area {
+  position: absolute;
+  left: 60px;
+  width: calc(100vw - 76px);
+  height: calc(100vh - 4rem);
+  overflow: scroll;
+  transition: all 1s ease;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (min-width:1000px) {
+  .display-area-shrink {
+
+    left: 250px;
+    width: calc(100% - 266px);
+  }
+}
+/* 
+@media only screen and (max-width:1000px) {
+  app-side-nav {
+    background-color: rgba(34, 34, 34);
+    overflow: visible;
+  }
+
+} */
+
+app-snackbar {
+  display: flex;
+  justify-content: center;
+}

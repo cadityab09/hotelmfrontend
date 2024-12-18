@@ -1,0 +1,8 @@
+.room-conainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    color: red;
+}
+

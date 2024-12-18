@@ -1,0 +1,17 @@
+<div class="room-details-form-container">
+    <form [formGroup]="roomDetailsForm" class="room-details-form">
+        <div class="form-title">Enter Room Details</div>
+        <div class="input-container">
+            <input class="form-control" placeholder="Room name" formControlName="name">
+        </div>
+        <div class="input-container">
+            <input class="form-control" placeholder="Room type" formControlName="type">
+        </div>
+        <div class="input-container">
+            <input class="form-control" placeholder="Room price" formControlName="price">
+        </div>
+        <div class="form-button">
+        <button class="btn btn-primary" type="submit" (click)="submitForm()">Save</button>
+        </div>
+    </form>
+</div>

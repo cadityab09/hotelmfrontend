@@ -1,0 +1,89 @@
+<div class="text-center my-3">
+    <a routerLink ="/admin/room" class="btn btn-primary post-room-btn">Post Room</a>
+</div>
+
+<div class="container room-container">
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let room of rooms">
+            <div class="card" style="width: 18rem; margin: 16px;">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://cache.marriott.com/marriottassets/marriott/LASJW/lasjw-suite-0084-hor-clsc.jpg?interpolation=progressive-bilinear&" class="rounded-circle me-3" alt="Room Avatar" width="50" height="50">
+                        <div>
+                            <h5 class="card-title">{{ room.name }}</h5>
+                            <p class="card-text">Type: {{ room.type }}</p>
+                            <p class="card-text">Price: {{ room.price }}</p>
+
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <a class="btn btn-outline-primary" routerLink="/admin/room/{{room.id}}/edit">
+                            <i class="bi bi-pencil-square icon"></i> Edit
+                        </a>
+                        <a class="btn btn-outline-danger" (click)="showConfirm(room.id)">
+                            <i class="bi bi-trash"></i> Delete
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pagination-container">
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [class.disabled]="getCurrentPage() === 1">
+          <a class="page-link" aria-label="Previous" (click)="pageIndexChange(getCurrentPage() - 1)">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item" [class.active]="getCurrentPage() === page" *ngFor="let page of totalPagesArray()">
+          <a class="page-link"  (click)="pageIndexChange(page)">{{ page }}</a>
+        </li>
+        <li class="page-item" [class.disabled]="getCurrentPage() === total">
+          <a class="page-link" aria-label="Next" (click)="pageIndexChange(getCurrentPage() + 1)">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
+
+
+
+<!-- <div class="center-form">
+    <button nz-button nzType="primary" class="post-room-btn" routerLink="/admin/room">Post Room</button>
+
+    <div class="room-container">
+        <div class="room-row" *ngFor="let room of rooms">
+            <nz-card style="width: 300px; margin: 16px;" [nzAction]="[actionEdit, actionDelete]">
+                <nz-skeleton [nzActive]="true" [nzLoading="false" [nzAvatar]="{size: 'large'}">
+                    <nz-card-meta [nzAvatar]="avatarTemplate" nzTitle="{{ room.name }}" nzDescription="Type: {{room.type}}">
+
+                    </nz-card-meta>
+                    <nz-card-meta style="margin-left: 49px;" nzDescription="Price: {{room.price}}" >
+                    </nz-card-meta>
+                </nz-skeleton>
+            </nz-card>
+
+            <ng-template #avatarTemplate>
+                <nz-avatar
+                    nzSrc="https://images.unsplash.com/room">
+                </nz-avatar>
+            </ng-template>
+            <ng-template #actionEdit>
+                <span nz-icon nzType="edit" nzTheme="twotone" class="icon">
+                </span>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<div class="pagination">
+    <nz-pagination [nzPageIndex]="currentPage" [nzTotal]="total" [nzPageSize]="1"
+    (nzPageIndexChange)="pageIndexChange($event)"></nz-pagination>
+</div>
+
+-->

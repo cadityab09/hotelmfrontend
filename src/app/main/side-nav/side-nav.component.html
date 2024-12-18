@@ -1,0 +1,29 @@
+<div class="side-nav-content ">
+    <ul class="nav-list" [ngClass]="{'nav-list-open':sideNavStatus}" >
+      <li class="nav-list-item" *ngFor="let item of list" >
+        <i nz-icon nzType="{{item.icon}}"></i>
+        <span>
+            <a (click)="NavigateUrl(item.url, item.name)">{{item.name}}</a>
+        </span>
+      </li>
+      
+    </ul>
+    <!-- <ul class="nav-list" [ngClass]="{'nav-list-open':sideNavStatus}" *ngIf="isAdminLoggedIn">
+      <li class="nav-list-item" *ngFor="let item of list2" >
+        <i class="{{item.icon}}"></i>
+        <span>
+            <a (click)="NavigateUrl(item.url, item.name)">{{item.name}}</a>
+        </span>
+      </li>
+      
+    </ul>
+    <ul class="nav-list" [ngClass]="{'nav-list-open':sideNavStatus}" *ngIf="isCustomerLoggedIn">
+      <li class="nav-list-item" *ngFor="let item of list3" >
+        <i class="{{item.icon}}"></i>
+        <span>
+            <a (click)="NavigateUrl(item.url, item.name)">{{item.name}}</a>
+        </span>
+      </li>
+      
+    </ul> -->
+</div>

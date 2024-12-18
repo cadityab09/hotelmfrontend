@@ -1,0 +1,35 @@
+.center-form {
+    width: 100%;
+    height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-item {
+    margin: 0px 5px;
+}
+
+table {
+    border: 3px solid black;
+}
+
+th {
+    border: 2px solid black ;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+td {
+    border: 1px solid black ;
+}
+
+span .check {
+    font-size: 25px;
+    color: green;
+}
+span .close {
+    font-size: 25px;
+    color: red;
+}
